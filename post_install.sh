@@ -22,7 +22,6 @@ usage()
 
 # Le Message Of The Day, qui s'affichera à chaque connexion SSH
 set_motd()
-{
 	if [ $VERBOSE = true ]; then
 		echo
 		echo "---------------------------------------------------------------"
@@ -33,7 +32,7 @@ set_motd()
 	fi
 
 	rm -f /etc/motd
-	cat post-install/motd >> /etc/motd
+	cat debian-post-install/motd_01 >> /etc/motd
 
 	rm -f /etc/update-motd.d/10-uname
  
@@ -115,7 +114,7 @@ set_vimrc()
 	fi
 	
 	mv /etc/vim/vimrc /etc/vim/vimrc.bak
-	cat /post-install/vimr >> /etc/vim/vimrc
+	cat debian-post-install/vimr >> /etc/vim/vimrc
 
 	if [ $VERBOSE = true ]; then
 		echo "[+]"
@@ -138,7 +137,7 @@ set_nanorc()
 	fi
 	
 	mv /etc/nanorc /etc/nanorc.bak
-	cat post-install/nanorc >> /etc/nanorc
+	cat debian-post-install/nanorc >> /etc/nanorc
 
 	if [ $VERBOSE = true ]; then
 		echo "[+]"
