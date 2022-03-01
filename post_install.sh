@@ -216,12 +216,11 @@ set_ssh()
 	fi
 
 	while true; do
-		read -p "$*[+] Would you like to add a SSH Pritvate Key for root login ? [y/n]: " yn
+		read -p "$*[+] Would you like to add a SSH Pritvate Key for user login ? [y/n]: " yn
 		case $yn in
 			[Yy]*)
 				read -p "[+] Paste your key here : " SSH_KEY ;
-				mkdir -p /root/.ssh && echo "$SSH_KEY" >> /root/.ssh/authorized_keys ;
-				sed -i 's+#PermitRootLogin prohibit-password+PermitRootLogin prohibit-password+g' /etc/ssh/sshd_config ;
+				mkdir -p /janitor/.ssh && echo "$SSH_KEY" >> /janitor/.ssh/authorized_keys ;
 				systemctl restart sshd ;
 				if [ $VERBOSE = true ]; then
 					echo "[+] ... "
