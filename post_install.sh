@@ -32,7 +32,7 @@ set_motd()
 	fi
 
 	rm -f /etc/motd
-	cat debian-post-install/motd_01 >> /etc/motd
+	cat /motd_01 >> /etc/motd
 
 	rm -f /etc/update-motd.d/10-uname
  
@@ -114,7 +114,7 @@ set_vimrc()
 	fi
 	
 	mv /etc/vim/vimrc /etc/vim/vimrc.bak
-	cat debian-post-install/vimr >> /etc/vim/vimrc
+	cat vimrc >> /etc/vim/vimrc
 
 	if [ $VERBOSE = true ]; then
 		echo "[+]"
@@ -137,7 +137,7 @@ set_nanorc()
 	fi
 	
 	mv /etc/nanorc /etc/nanorc.bak
-	cat debian-post-install/nanorc >> /etc/nanorc
+	cat nanorc >> /etc/nanorc
 
 	if [ $VERBOSE = true ]; then
 		echo "[+]"
