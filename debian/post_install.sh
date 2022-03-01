@@ -65,7 +65,7 @@ set_packets()
 		sleep 1
 	fi
 
-	DEBIAN_FRONTEND=noninteractive apt-get install -y apt-transport-https ca-certificates ccze curl dnsutils gawk gcc git htop iptables-persistent less lsb-release lynx man neofetch net-tools nmap rsync screen tcpdump tzdata unzip vim wget zip
+	DEBIAN_FRONTEND=noninteractive apt-get install -y apt-transport-https ca-certificates ccze curl dnsutils gawk gcc git htop iptables-persistent less lsb-release lynx man neofetch net-tools nmap rsync screen tcpdump tree tzdata unzip vim wget zip
 
 	if [ $VERBOSE = true ]; then
 		echo
