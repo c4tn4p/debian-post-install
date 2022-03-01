@@ -22,6 +22,7 @@ usage()
 
 # Le Message Of The Day, qui s'affichera à chaque connexion SSH
 set_motd()
+{
 	if [ $VERBOSE = true ]; then
 		echo
 		echo "---------------------------------------------------------------"
